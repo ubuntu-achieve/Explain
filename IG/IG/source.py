@@ -36,7 +36,7 @@ input = input.unsqueeze(0)
 output = model(input)
 output = F.softmax(output, dim=1)
 prediction_score, pred_label_idx = torch.topk(output, 1)
-labels_path = './IG/imagenet_class_index.json'
+labels_path = './imagenet_class_index.json'
 with open(labels_path) as json_data:
     idx_to_labels = json.load(json_data)
 pred_label_idx.squeeze_()
