@@ -5,31 +5,35 @@
 CAM
 
 - [x] CAM
-- [x] AblationCAM
-- [x] EigenCAM
+- [x] Ablation-CAM
+- [x] Eigen-CAM
 - [x] EigenGrad-CAM
+- [x] Full-Grad
 - [x] Grad-CAM
-- [x] Grad-CAMs
 - [x] Grad-CAM++
-- [x] LayerCAM
-- [x] FullGrad-CAM
+- [x] Grad-CAM-ElementWise
+- [x] HiResCAM
+- [x] Layer-CAM
+- [x] RandomCAM
+- [x] Score-CAM
+- [x] XGrad-CAM
 - [ ] Integrated Grad-CAM
 - [ ] Relevance-CAM
 
 积分梯度
 
-- [ ] IG
-- [ ] IGOS
+- [x] IG
+- [x] IGOS
 - [ ] Enhanced Integrated Gradients
 - [ ] Guided IG
 
 LIME
 
-- [ ] lime
+- [x] lime
 
 LRP
 
-- [ ] LRP
+- [x] LRP
 
 ## 样本阐述
 

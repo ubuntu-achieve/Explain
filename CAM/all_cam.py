@@ -4,7 +4,7 @@ import numpy as np
 import torch
 from torchvision import models
 from pytorch_grad_cam import GradCAM ,GradCAMPlusPlus, GradCAMElementWise, XGradCAM, AblationCAM, ScoreCAM,\
-    EigenCAM, EigenGradCAM, LayerCAM, FullGrad
+    EigenCAM, EigenGradCAM, LayerCAM, FullGrad, HiResCAM, RandomCAM
 
 from pytorch_grad_cam import GuidedBackpropReLUModel
 from pytorch_grad_cam.utils.image import show_cam_on_image, \
@@ -15,6 +15,8 @@ import warnings
 warnings.filterwarnings("ignore")
 
 methods = {
+    'HiResCAM':HiResCAM,
+    'RandomCAM':RandomCAM,
     'Grad-CAM':GradCAM,
     'Grad-CAM++':GradCAMPlusPlus,
     'Grad-CAM-ElementWise':GradCAMElementWise,
@@ -24,7 +26,7 @@ methods = {
     'Eigen-CAM':EigenCAM,
     'EigenGrad-CAM':EigenGradCAM,
     'Layer-CAM':LayerCAM,
-    'Full-Grad':FullGrad
+    'Full-Grad':FullGrad,
 }
 
 input_path  = "./Images"

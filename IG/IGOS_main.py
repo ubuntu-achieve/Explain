@@ -2,7 +2,7 @@
 # Generating video using I-GOS
 # python Version: python3.6
 # by Zhongang Qi (qiz@oregonstate.edu)
-from IG.IGOS.util import *
+from IG.IGOS_util import *
 import os
 import time
 import scipy.io as scio
@@ -649,26 +649,18 @@ def write_video(inputpath, outputname, img_num, fps = 10):
         videoWriter.write(img12)
     videoWriter.release()
 
-
-
-
-
+# main
 if __name__ == '__main__':
-
-
     input_path = './Images'
-
     output_path = './Results/IGOS'
     if not os.path.isdir(output_path):
         os.makedirs(output_path)
 
     files = os.listdir(input_path)
     print(files)
-    #print('-------------------')
     model = load_model_new(use_cuda=use_cuda, model_name='vgg19')  #
 
     for imgname in files:
-        # if imgname.endswith('jpg'):
         if imgname.endswith('JPEG'):
             input_img = os.path.join(input_path, imgname)
             print('imgname:', imgname)
