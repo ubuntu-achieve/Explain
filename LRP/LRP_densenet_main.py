@@ -423,7 +423,7 @@ def test_model5(dataloader, dataset_size, model, device):
       print(fns)
 
 
-    #main 是否展示图片
+    # main 是否展示图片
     imshow2(rel.to('cpu'),imgtensor = inputs.to('cpu'),fns=os.path.join(output_path, 'result_desenet_'+fns[0][-6:]),is_show=False)
 
 
