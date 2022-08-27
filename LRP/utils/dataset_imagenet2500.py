@@ -3,7 +3,7 @@ import os
 
 import PIL.Image
 
-from util.getimagenetclasses import *
+from utils.getimagenetclasses import *
 from torch.utils.data import Dataset
 
 

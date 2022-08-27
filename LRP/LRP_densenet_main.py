@@ -10,10 +10,10 @@ try:
 except ImportError:
     from torch.utils.model_zoo import load_url as load_state_dict_from_url
 
-from util.lrp_general6 import *
-from util.heatmaphelpers import *
-from util.getimagenetclasses import *
-from util.dataset_imagenet2500 import dataset_imagenetvalpart_nolabels
+from utils.lrp_general6 import *
+from utils.heatmaphelpers import *
+from utils.getimagenetclasses import *
+from utils.dataset_imagenet2500 import dataset_imagenetvalpart_nolabels
 
 
 class  Modulenotfounderror(Exception):
