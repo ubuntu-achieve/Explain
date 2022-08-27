@@ -53,6 +53,7 @@ for img in os.listdir(input_path):
     fc_weights_resnet18 = resnet18._modules.get('fc').weight.data.numpy()
     fc_weights_resnet50 = resnet50._modules.get('fc').weight.data.numpy()
     fc_weights_densenet121 = densenet121._modules.get('classifier').weight.data.numpy()
+    #fc_weights_densenet121 = densenet121._modules.get('classifier')[6].weight.data.numpy()
 
     # 图片数据转换
     image_transform = transforms.Compose([
@@ -95,7 +96,8 @@ for img in os.listdir(input_path):
     cam_resnet18 = src_image * 0.5 + cam_color_resnet18 * 0.5
     cam_resnet50 = src_image * 0.5 + cam_color_resnet50 * 0.5
     cam_densenet121 = src_image * 0.5 + cam_color_densenet121 * 0.5
-    cam_hstack = np.hstack((src_image, cam_resnet18, cam_resnet50, cam_densenet121))
+    #cam_hstack = np.hstack((src_image, cam_resnet18, cam_resnet50, cam_densenet121))
+    cam_hstack = np.hstack((cam_resnet50, cam_densenet121))
     cv2.imwrite(os.path.join(output_path,"result_"+img), cam_hstack)
     # 可视化
     Image.open(os.path.join(output_path,"result_"+img)).show()

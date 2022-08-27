@@ -10,10 +10,10 @@ try:
 except ImportError:
     from torch.utils.model_zoo import load_url as load_state_dict_from_url
 
-from LRP.utils.lrp_general6 import *
-from LRP.utils.heatmaphelpers import *
-from LRP.utils.getimagenetclasses import *
-from LRP.utils.dataset_imagenet2500 import dataset_imagenetvalpart_nolabels
+from utils.lrp_general6 import *
+from utils.heatmaphelpers import *
+from utils.getimagenetclasses import *
+from utils.dataset_imagenet2500 import dataset_imagenetvalpart_nolabels
 
 
 class Cannotloadmodelweightserror(Exception):

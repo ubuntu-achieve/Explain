@@ -20,3 +20,4 @@ scipy
 six
 grad-cam
 lime
+pycocotools

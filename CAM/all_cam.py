@@ -30,10 +30,10 @@ methods = {
 }
 
 input_path  = "./Images"
-use_cuda = True
+use_cuda = False
 
 if __name__ == '__main__':
-    for method in methods.keys():
+    for method in [i for i in methods.keys()][7:]:
         output_path = f'./Results/{method}'
         print(f'{method}测试')
         if not os.path.isdir(output_path):
@@ -58,7 +58,7 @@ if __name__ == '__main__':
 
                 targets = None
 
-                cam_algorithm = AblationCAM
+                cam_algorithm = methods[method]
                 with cam_algorithm(model=m, target_layers=target_layers, use_cuda=use_cuda) as cam:
 
                     cam.batch_size = 32

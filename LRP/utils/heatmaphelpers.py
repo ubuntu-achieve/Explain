@@ -1,7 +1,8 @@
 #coding=utf-8
+import os
 import numpy as np
 import matplotlib.pyplot as plt
-
+from PIL import Image
 import torch
 
 def imshow2(hm,imgtensor,fns,q=100, is_show=True):
@@ -42,4 +43,4 @@ def imshow2(hm,imgtensor,fns,q=100, is_show=True):
     if is_show:
       plt.show()
     else:
-      plt.savefig (str(fns),dpi=800)
+      plt.imsave(fns, hm, cmap="seismic")
