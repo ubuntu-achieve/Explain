@@ -27,7 +27,7 @@ transform_normalize = transforms.Normalize(
      std=[0.229, 0.224, 0.225]
  )
 
-img = Image.open('Images/4.JPEG')
+img = Image.open('Images/3.JPEG')
 
 transformed_img = transform(img)
 

@@ -2,7 +2,7 @@
 # Generating video using I-GOS
 # python Version: python3.6
 # by Zhongang Qi (qiz@oregonstate.edu)
-from IG.IGOS_util import *
+from IGOS_util import *
 import os
 import time
 import scipy.io as scio
@@ -535,7 +535,7 @@ def Deletion_Insertion(mask, model, output_path, img_ori, blurred_img_ori, logit
     try:
         f_groundtruth = open('./GroundTruth1000.txt')
     except:
-        f_groundtruth = open('./IGOS/GroundTruth1000.txt')
+        f_groundtruth = open('./IG/GroundTruth1000.txt')
     line_i = f_groundtruth.readlines()[category]
     f_groundtruth.close()
     print('line_i:', line_i)
@@ -650,6 +650,7 @@ def write_video(inputpath, outputname, img_num, fps = 10):
     videoWriter.release()
 
 # main
+use_cuda = True
 if __name__ == '__main__':
     input_path = './Images'
     output_path = './Results/IGOS'
@@ -658,7 +659,7 @@ if __name__ == '__main__':
 
     files = os.listdir(input_path)
     print(files)
-    model = load_model_new(use_cuda=use_cuda, model_name='vgg19')  #
+    model = load_model_new(use_cuda=use_cuda, model_name='vgg19')  # 选择模型
 
     for imgname in files:
         if imgname.endswith('JPEG'):
@@ -700,9 +701,5 @@ if __name__ == '__main__':
 
             output_file = outvideo_path + imgname[:-5] + '_IGOS_'
             del_img, ins_img, delloss_top2, insloss_top2, del_ratio, ins_ratio, outmax, cateout, xnum = Deletion_Insertion(mask, model, output_file, img, blurred_img, logitori, category=-1, pixelnum=200, use_cuda=1,blur_mask=0,outputfig=1)
-            video_name = outvideo_path + 'AllVideo_fps10' + imgname[:-5] + '.avi'
+            video_name = os.path.join(output_path, 'AllVideo_fps10' + imgname[:-5] + '.mp4')
             write_video(output_file, video_name, xnum, fps=3)
-
-
-
-

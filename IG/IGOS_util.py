@@ -14,7 +14,8 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 from skimage import filters
 
-use_cuda = torch.cuda.is_available()
+#use_cuda = torch.cuda.is_available()
+use_cuda = True
 FloatTensor = torch.cuda.FloatTensor if use_cuda else torch.FloatTensor
 LongTensor = torch.cuda.LongTensor if use_cuda else torch.LongTensor
 Tensor = FloatTensor

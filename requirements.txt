@@ -21,3 +21,4 @@ six
 grad-cam
 lime
 pycocotools
+torchray
