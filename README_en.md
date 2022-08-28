@@ -5,7 +5,7 @@
     <img src="https://img.shields.io/github/directory-file-count/ubuntu-achieve/Explain"/>
     <img src="https://img.shields.io/github/repo-size/ubuntu-achieve/Explain"/>
 </center>
-## 总览
+## Overview
 
 CAM
 
@@ -38,11 +38,11 @@ LRP
 
 - [x] LRP
 
-## 样本阐述
+##  Sample Description
 
-**解释模型**：ResNet50、VGG19（权重及模型从Pytorch包直接导入）
+**Explanatory model**: ResNet50, VGG19(Weights and models are imported directly from the Pytorch package).
 
-**原始图片**：
+**Source img**: 
 
 ![1](Images/1.JPEG)
 
@@ -52,13 +52,13 @@ LRP
 
 ![4](Images/4.JPEG)
 
-**预测结果**：alp（高山，0.67）、jeep（吉普车，0.95）、jeep（吉普车，0.40）、dalmatian（达尔马提亚狗，0.999）
+**Predicted results**: (alp, 0.67), (jeep, 0.95), (jeep, 0.40), (dalmatian, 0.999)
 
-## 方法实况
+##  Methodology Live
 
-> 左侧为VGG19，右侧为ResNet50
+> The left side is VGG19, the right side is ResNet50
 >
-> 在所有CAM解释方法中，颜色越红表示对分类作用越强烈作用
+> Among all CAM interpretation methods, the redder the color indicates a stronger effect on classification
 
 ### CAM
 
@@ -181,7 +181,7 @@ LRP
 
 ### LIME
 
-其中蓝色部分是对分类有正向作用的部分
+The blue part is the part that has a positive effect on the classification.
 
 <center class="half">
     <img src="Results/LIME/result_vgg19_1.JPEG" width="240"/>
@@ -211,7 +211,7 @@ LRP
 
 ### LRP
 
-越亮的点表示对分类的作用越强烈
+Brighter dots indicate a stronger effect on classification.
 
 <center class="half">
     <img src="Results/LRP/result_desenet_1.JPEG" width="240"/>
@@ -255,7 +255,7 @@ LRP
 
 <video id="video" controls=""src="Results/IGOS/AllVideo_fps104.mp4" preload="none"></video>
 
-## 核心代码
+##  Core Code
 
 ### CAM
 
