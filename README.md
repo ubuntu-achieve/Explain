@@ -1,10 +1,9 @@
 # README
 
 <center class="half">
-    <img src="https://img.shields.io/github/stars/ubuntu-achieve/Explain.svg"/>
-    <img src="https://img.shields.io/github/directory-file-count/ubuntu-achieve/Explain"/>
-    <img src="https://img.shields.io/github/repo-size/ubuntu-achieve/Explain"/>
+    <img src="https://img.shields.io/github/stars/ubuntu-achieve/Explain.svg"/><img src="https://img.shields.io/github/directory-file-count/ubuntu-achieve/Explain"/><img src="https://img.shields.io/github/repo-size/ubuntu-achieve/Explain"/>
 </center>
+
 ## 总览
 
 CAM
@@ -154,29 +153,23 @@ LRP
 ### Relevance-CAM
 
 <center class="half">
-    <img src="Results/Relevance-CAM/result_vgg19_1.JPEG" width="240"/>
-    <img src="Results/Relevance-CAM/result_resnet50_1.JPEG" width="240"/>
+    <img src="Results/Relevance-CAM/result_vgg19_1.JPEG" width="350"/><img src="Results/Relevance-CAM/result_resnet50_1.JPEG" width="350"/>
 </center>
 
 
 
 <center class="half">
-    <img src="Results/Relevance-CAM/result_vgg19_2.JPEG" width="240"/>
-    <img src="Results/Relevance-CAM/result_resnet50_2.JPEG" width="240"/>
+    <img src="Results/Relevance-CAM/result_vgg19_2.JPEG" width="350"/><img src="Results/Relevance-CAM/result_resnet50_2.JPEG" width="350"/>
 </center>
 
 
-
 <center class="half">
-    <img src="Results/Relevance-CAM/result_vgg19_3.JPEG" width="240"/>
-    <img src="Results/Relevance-CAM/result_resnet50_3.JPEG" width="240"/>
+    <img src="Results/Relevance-CAM/result_vgg19_3.JPEG" width="350"/><img src="Results/Relevance-CAM/result_resnet50_3.JPEG" width="350"/>
 </center>
 
 
-
 <center class="half">
-    <img src="Results/Relevance-CAM/result_vgg19_4.JPEG" width="240"/>
-    <img src="Results/Relevance-CAM/result_resnet50_4.JPEG" width="240"/>
+    <img src="Results/Relevance-CAM/result_vgg19_4.JPEG" width="350"/><img src="Results/Relevance-CAM/result_resnet50_4.JPEG" width="350"/>
 </center>
 
 ### LIME
@@ -184,29 +177,22 @@ LRP
 其中蓝色部分是对分类有正向作用的部分
 
 <center class="half">
-    <img src="Results/LIME/result_vgg19_1.JPEG" width="240"/>
-    <img src="Results/LIME/result_resnet_1.JPEG" width="240"/>
+    <img src="Results/LIME/result_vgg19_1.JPEG" width="350"/><img src="Results/LIME/result_resnet_1.JPEG" width="350"/>
 </center>
 
 
-
 <center class="half">
-    <img src="Results/LIME/result_vgg19_2.JPEG" width="240"/>
-    <img src="Results/LIME/result_resnet_2.JPEG" width="240"/>
+    <img src="Results/LIME/result_vgg19_2.JPEG" width="350"/><img src="Results/LIME/result_resnet_2.JPEG" width="350"/>
 </center>
 
 
-
 <center class="half">
-    <img src="Results/LIME/result_vgg19_3.JPEG" width="240"/>
-    <img src="Results/LIME/result_resnet_3.JPEG" width="240"/>
+    <img src="Results/LIME/result_vgg19_3.JPEG" width="350"/><img src="Results/LIME/result_resnet_3.JPEG" width="350"/>
 </center>
 
 
-
 <center class="half">
-    <img src="Results/LIME/result_vgg19_4.JPEG" width="240"/>
-    <img src="Results/LIME/result_resnet_4.JPEG" width="240"/>
+    <img src="Results/LIME/result_vgg19_4.JPEG" width="350"/><img src="Results/LIME/result_resnet_4.JPEG" width="350"/>
 </center>
 
 ### LRP
@@ -214,30 +200,24 @@ LRP
 越亮的点表示对分类的作用越强烈
 
 <center class="half">
-    <img src="Results/LRP/result_desenet_1.JPEG" width="240"/>
-    <img src="Results/LRP/result_resnet_1.JPEG" width="240"/>
+    <img src="Results/LRP/result_desenet_1.JPEG" width="350"/><img src="Results/LRP/result_resnet_1.JPEG" width="350"/>
 </center>
-
 
 
 <center class="half">
-    <img src="Results/LRP/result_desenet_2.JPEG" width="240"/>
-    <img src="Results/LRP/result_resnet_2.JPEG" width="240"/>
+    <img src="Results/LRP/result_desenet_2.JPEG" width="350"/><img src="Results/LRP/result_resnet_2.JPEG" width="350"/>
 </center>
-
 
 
 <center class="half">
-    <img src="Results/LRP/result_desenet_3.JPEG" width="240"/>
-    <img src="Results/LRP/result_resnet_3.JPEG" width="240"/>
+    <img src="Results/LRP/result_desenet_3.JPEG" width="350"/><img src="Results/LRP/result_resnet_3.JPEG" width="350"/>
 </center>
-
 
 
 <center class="half">
-    <img src="Results/LRP/result_desenet_4.JPEG" width="240"/>
-    <img src="Results/LRP/result_resnet_4.JPEG" width="240"/>
+    <img src="Results/LRP/result_desenet_4.JPEG" width="350"/><img src="Results/LRP/result_resnet_4.JPEG" width="350"/>
 </center>
+
 ### IG
 
 ![1](Results/IG/result_1.png)
@@ -247,13 +227,23 @@ LRP
 
 ### IGOS
 
-<video id="video" controls=""src="Results/IGOS/AllVideo_fps101.mp4" preload="none"></video>
+<center class="half">
+    <img src="Results/IGOS/AllVideo_fps101_vgg19.gif" width="350"/><img src="Results/IGOS/AllVideo_fps101_resnet50.gif" width="350"/>
+</center>
 
-<video id="video" controls=""src="Results/IGOS/AllVideo_fps102.mp4" preload="none"></video>
+<center class="half">
+    <img src="Results/IGOS/AllVideo_fps102_vgg19.gif" width="350"/><img src="Results/IGOS/AllVideo_fps102_resnet50.gif" width="350"/>
+</center>
 
-<video id="video" controls=""src="Results/IGOS/AllVideo_fps103.mp4" preload="none"></video>
+<center class="half">
+    <img src="Results/IGOS/AllVideo_fps103_vgg19.gif" width="350"/><img src="Results/IGOS/AllVideo_fps103_resnet50.gif" width="350"/>
+</center>
 
-<video id="video" controls=""src="Results/IGOS/AllVideo_fps104.mp4" preload="none"></video>
+
+
+<center class="half">
+    <img src="Results/IGOS/AllVideo_fps104_vgg19.gif" width="350"/><img src="Results/IGOS/AllVideo_fps104_resnet50.gif" width="350"/>
+</center>
 
 ## 核心代码
 

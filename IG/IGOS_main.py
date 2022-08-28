@@ -659,7 +659,7 @@ if __name__ == '__main__':
 
     files = os.listdir(input_path)
     print(files)
-    model = load_model_new(use_cuda=use_cuda, model_name='vgg19')  # 选择模型
+    model = load_model_new(use_cuda=use_cuda, model_name='resnet50')  # 选择模型
 
     for imgname in files:
         if imgname.endswith('JPEG'):
