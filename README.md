@@ -23,7 +23,6 @@ CAM
 - [x] RandomCAM
 - [x] Score-CAM
 - [x] XGrad-CAM
-- [ ] Integrated Grad-CAM
 - [x] Relevance-CAM
 
 积分梯度
@@ -31,7 +30,6 @@ CAM
 - [x] IG
 - [x] IGOS
 - [ ] Enhanced Integrated Gradients
-- [ ] Guided IG
 
 LIME
 
