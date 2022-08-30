@@ -1,10 +1,9 @@
-# README
+<h1 align="center">README_en</h1>
 
-<center class="half">
-    <img src="https://img.shields.io/github/stars/ubuntu-achieve/Explain.svg"/>
-    <img src="https://img.shields.io/github/directory-file-count/ubuntu-achieve/Explain"/>
-    <img src="https://img.shields.io/github/repo-size/ubuntu-achieve/Explain"/>
-</center>
+<p align="middle">
+    <img src="https://img.shields.io/github/stars/ubuntu-achieve/Explain.svg"/><img src="https://img.shields.io/github/directory-file-count/ubuntu-achieve/Explain"/><img src="https://img.shields.io/github/repo-size/ubuntu-achieve/Explain"/>
+</P>
+
 ## Overview
 
 CAM
@@ -56,11 +55,27 @@ LRP
 
 ##  Methodology Live
 
+### Total Show
+
+**ResNet50**
+
+![1](Results/all/result_1_resnet.JPEG)
+![2](Results/all/result_2_resnet.JPEG)
+![3](Results/all/result_3_resnet.JPEG)
+![4](Results/all/result_4_resnet.JPEG)
+
+**VGG19**
+
+![1](Results/all/result_1_vgg.JPEG)
+![2](Results/all/result_2_vgg.JPEG)
+![3](Results/all/result_3_vgg.JPEG)
+![4](Results/all/result_4_vgg.JPEG)
+
+### CAM
+
 > The left side is VGG19, the right side is ResNet50
 >
 > Among all CAM interpretation methods, the redder the color indicates a stronger effect on classification
-
-### CAM
 
 ![1](Results/CAM/result_1.JPEG)
 ![2](Results/CAM/result_2.JPEG)

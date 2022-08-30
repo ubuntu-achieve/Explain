@@ -38,6 +38,21 @@ LRP
 
 - [x] LRP
 
+新方法
+
+- [ ] Activation Maximization
+- [ ] Performing AM in Code Space
+- [ ] Sensitivity Analysis
+- [ ] Simple Taylor Decomposition
+- [ ] Layer-wise Relevance Propagation
+- [ ] Deep Taylor Decomposition
+- [ ] DeepLIFT
+- [ ] Deconvolution
+- [ ] Backpropagation
+- [ ] Guided Backpropagation
+- [ ] SmoothGrad
+- [ ] Class Activation Map
+
 ## 样本阐述
 
 **解释模型**：ResNet50、VGG19（权重及模型从Pytorch包直接导入）
@@ -56,11 +71,27 @@ LRP
 
 ## 方法实况
 
+### 整体展示
+
+**ResNet50**
+
+![1](Results/all/result_1_resnet.JPEG)
+![2](Results/all/result_2_resnet.JPEG)
+![3](Results/all/result_3_resnet.JPEG)
+![4](Results/all/result_4_resnet.JPEG)
+
+**VGG19**
+
+![1](Results/all/result_1_vgg.JPEG)
+![2](Results/all/result_2_vgg.JPEG)
+![3](Results/all/result_3_vgg.JPEG)
+![4](Results/all/result_4_vgg.JPEG)
+
+### CAM
+
 > 左侧为VGG19，右侧为ResNet50
 >
 > 在所有CAM解释方法中，颜色越红表示对分类作用越强烈作用
-
-### CAM
 
 ![1](Results/CAM/result_1.JPEG)
 ![2](Results/CAM/result_2.JPEG)
@@ -808,18 +839,13 @@ mask, upsampled_mask, imgratio, curvetop, curve1, curve2, category = Integrated_
 
 ```python
 def test_model5(dataloader, dataset_size, model, device):
-
   model.train(False)
-
-
-
   for data in dataloader:
     # get the inputs
     #inputs, labels, filenames = data
     inputs=data['image']
     labels=data['label']    
     fns=data['filename']  
-
     inputs = inputs.to(device).clone()
     labels = labels.to(device)
 
