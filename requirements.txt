@@ -20,5 +20,6 @@ scipy
 six
 grad-cam
 lime
+jupyter
 pycocotools
 torchray

@@ -42,14 +42,14 @@ LRP
 
 - [ ] Activation Maximization
 - [ ] Performing AM in Code Space
-- [ ] Sensitivity Analysis
+- [ ] Sensitivity Analysis（Pytorch）
 - [ ] Simple Taylor Decomposition
 - [ ] Layer-wise Relevance Propagation
 - [ ] Deep Taylor Decomposition
-- [ ] DeepLIFT
-- [ ] Deconvolution
+- [ ] DeepLift（Pytorch/TensorFlow）【False，似乎不支持比较复杂的模型】
+- [ ] Deconvolution（Pytorch）【False】
 - [ ] Backpropagation
-- [ ] Guided Backpropagation
+- [ ] Guided Backpropagation（Pytorch）
 - [ ] SmoothGrad
 - [ ] Class Activation Map
 
@@ -226,7 +226,6 @@ LRP
 <p align="middle">
     <img src="Results/LIME/result_vgg19_4.JPEG" width="350"/><img src="Results/LIME/result_resnet_4.JPEG" width="350"/>
 </P>
-
 ### LRP
 
 越亮的点表示对分类的作用越强烈
