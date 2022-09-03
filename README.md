@@ -40,18 +40,19 @@ LRP
 
 新方法
 
-- [ ] Activation Maximization
+- [x] Activation Maximization
 - [ ] Performing AM in Code Space
 - [ ] Sensitivity Analysis（Pytorch）
 - [ ] Simple Taylor Decomposition
-- [ ] Layer-wise Relevance Propagation
+- [ ] Layer-wise Relevance Propagation（没有实现）
 - [ ] Deep Taylor Decomposition
 - [ ] DeepLift（Pytorch/TensorFlow）【False，似乎不支持比较复杂的模型】
 - [ ] Deconvolution（Pytorch）【False】
 - [ ] Backpropagation
 - [ ] Guided Backpropagation（Pytorch）
 - [ ] SmoothGrad
-- [ ] Class Activation Map
+- [ ] Explanation Continuity
+- [ ] Explanation Selectivity
 
 ## 样本阐述
 

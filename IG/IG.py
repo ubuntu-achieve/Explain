@@ -1,11 +1,9 @@
-import torch
-import torch.nn.functional as F
-
-from PIL import Image
-
 import json
 import numpy as np
+from PIL import Image
 
+import torch
+import torch.nn.functional as F
 from torchvision import models
 from torchvision import transforms
 
