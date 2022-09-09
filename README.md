@@ -2,7 +2,7 @@
 
 <p align="middle">
     <img src="https://img.shields.io/github/stars/ubuntu-achieve/Explain.svg"/><img src="https://img.shields.io/github/directory-file-count/ubuntu-achieve/Explain"/><img src="https://img.shields.io/github/repo-size/ubuntu-achieve/Explain"/>
-</P>
+</p>
 
 
 ## 总览
@@ -28,6 +28,7 @@ Integrated Gradients
 
 - [x] IG
 - [x] IGOS
+- [x] Guided IG
 - [ ] Enhanced Integrated Gradients
 
 LIME
@@ -42,15 +43,14 @@ LRP
 
 - [x] Activation Maximization
 - [ ] Performing AM in Code Space
-- [ ] Sensitivity Analysis（Pytorch）
+- [x] Sensitivity Analysis（Pytorch）
 - [ ] Simple Taylor Decomposition
-- [ ] Layer-wise Relevance Propagation（没有实现）
 - [ ] Deep Taylor Decomposition
-- [ ] DeepLift（Pytorch/TensorFlow）【False，似乎不支持比较复杂的模型】
-- [ ] Deconvolution（Pytorch）【False】
+- [ ] DeepLift（Pytorch/TensorFlow）【False，似乎不支持比较复杂的模型，不能有两个以上的ReLU】
+- [ ] Deconvolution（Pytorch）【False，在调试】
 - [ ] Backpropagation
 - [ ] Guided Backpropagation（Pytorch）
-- [ ] SmoothGrad
+- [x] SmoothGrad
 - [ ] Explanation Continuity
 - [ ] Explanation Selectivity
 
@@ -187,23 +187,23 @@ LRP
 
 <p align="middle">
     <img src="Results/Relevance-CAM/result_vgg19_1.JPEG" width="350"/><img src="Results/Relevance-CAM/result_resnet50_1.JPEG" width="350"/>
-</P>
+</p>
 
 
 
 <p align="middle">
     <img src="Results/Relevance-CAM/result_vgg19_2.JPEG" width="350"/><img src="Results/Relevance-CAM/result_resnet50_2.JPEG" width="350"/>
-</P>
+</p>
 
 
 <p align="middle">
     <img src="Results/Relevance-CAM/result_vgg19_3.JPEG" width="350"/><img src="Results/Relevance-CAM/result_resnet50_3.JPEG" width="350"/>
-</P>
+</p>
 
 
 <p align="middle">
     <img src="Results/Relevance-CAM/result_vgg19_4.JPEG" width="350"/><img src="Results/Relevance-CAM/result_resnet50_4.JPEG" width="350"/>
-</P>
+</p>
 
 ### LIME
 
@@ -211,44 +211,44 @@ LRP
 
 <p align="middle">
     <img src="Results/LIME/result_vgg19_1.JPEG" width="350"/><img src="Results/LIME/result_resnet_1.JPEG" width="350"/>
-</P>
+</p>
 
 
 <p align="middle">
     <img src="Results/LIME/result_vgg19_2.JPEG" width="350"/><img src="Results/LIME/result_resnet_2.JPEG" width="350"/>
-</P>
+</p>
 
 
 <p align="middle">
     <img src="Results/LIME/result_vgg19_3.JPEG" width="350"/><img src="Results/LIME/result_resnet_3.JPEG" width="350"/>
-</P>
+</p>
 
 
 <p align="middle">
     <img src="Results/LIME/result_vgg19_4.JPEG" width="350"/><img src="Results/LIME/result_resnet_4.JPEG" width="350"/>
-</P>
+</p>
 ### LRP
 
 越亮的点表示对分类的作用越强烈
 
 <p align="middle">
     <img src="Results/LRP/result_desenet_1.JPEG" width="350"/><img src="Results/LRP/result_resnet_1.JPEG" width="350"/>
-</P>
+</p>
 
 
 <p align="middle">
     <img src="Results/LRP/result_desenet_2.JPEG" width="350"/><img src="Results/LRP/result_resnet_2.JPEG" width="350"/>
-</P>
+</p>
 
 
 <p align="middle">
     <img src="Results/LRP/result_desenet_3.JPEG" width="350"/><img src="Results/LRP/result_resnet_3.JPEG" width="350"/>
-</P>
+</p>
 
 
 <p align="middle">
     <img src="Results/LRP/result_desenet_4.JPEG" width="350"/><img src="Results/LRP/result_resnet_4.JPEG" width="350"/>
-</P>
+</p>
 
 ### IG
 
@@ -261,21 +261,41 @@ LRP
 
 <p align="middle">
     <img src="Results/IGOS/AllVideo_fps101_vgg19.gif" width="350"/><img src="Results/IGOS/AllVideo_fps101_resnet50.gif" width="350"/>
-</P>
+</p>
 
 <p align="middle">
     <img src="Results/IGOS/AllVideo_fps102_vgg19.gif" width="350"/><img src="Results/IGOS/AllVideo_fps102_resnet50.gif" width="350"/>
-</P>
+</p>
 
 <p align="middle">
     <img src="Results/IGOS/AllVideo_fps103_vgg19.gif" width="350"/><img src="Results/IGOS/AllVideo_fps103_resnet50.gif" width="350"/>
-</P>
+</p>
 
 
 
 <p align="middle">
     <img src="Results/IGOS/AllVideo_fps104_vgg19.gif" width="350"/><img src="Results/IGOS/AllVideo_fps104_resnet50.gif" width="350"/>
-</P>
+</p>
+### Guided IG
+
+<p align="middle">
+    <img src="Results\GNL\result_resnet501.JPEG" width="350"/><img src="Results\GNL\result_vgg191.JPEG" width="350"/>
+</p>
+
+
+<p align="middle">
+    <img src="Results\GNL\result_resnet502.JPEG" width="350"/><img src="Results\GNL\result_vgg192.JPEG" width="350"/>
+</p>
+
+
+<p align="middle">
+    <img src="Results\GNL\result_resnet503.JPEG" width="350"/><img src="Results\GNL\result_vgg193.JPEG" width="350"/>
+</p>
+
+
+<p align="middle">
+    <img src="Results\GNL\result_resnet504.JPEG" width="350"/><img src="Results\GNL\result_vgg194.JPEG" width="350"/>
+</p>
 
 ## 核心代码
 

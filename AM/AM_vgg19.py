@@ -20,7 +20,7 @@ model = VGG19(weights='imagenet', include_top=True)
 # 取出模型中某层的索引
 layer_idx = utils.find_layer_idx(model, 'predictions')
 
-# 交换Softmax和线性层
+# 重置为线性层
 model.layers[layer_idx].activation = activations.linear
 model = utils.apply_modifications(model)
 
@@ -38,6 +38,7 @@ if __name__ == "__main__":
         for modifier in ['guided', 'relu']:
             plt.suptitle(modifier)
             # 20是对应于ouzel的模型索引
+            # 重新生成最后一层并计算梯度
             grads = visualize_saliency(
                 model,
                 layer_idx,
