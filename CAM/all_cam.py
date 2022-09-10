@@ -33,7 +33,7 @@ input_path  = "./Images"
 use_cuda = False
 
 if __name__ == '__main__':
-    for method in [i for i in methods.keys()][7:]:
+    for method in [i for i in methods.keys()][6:]:
         output_path = f'./Results/{method}'
         print(f'{method}测试')
         if not os.path.isdir(output_path):
