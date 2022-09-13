@@ -13,7 +13,7 @@ output_path = "./Results/CAM"
 if not os.path.isdir(output_path):
     os.makedirs(output_path)
 
-def feature_hook(model, input, output):
+def feature_hook(model, input, output): 
     feature_data.append(output.data.numpy())
 
 # =====获取CAM start=====
@@ -87,11 +87,11 @@ for img in os.listdir(input_path):
     h, w, _ = src_image.shape
     # 2)cam转换成与原图大小一致的彩色度(cv2.COLORMAP_HSV为彩色图的其中一种类型)
     cam_color_resnet18 = cv2.applyColorMap(cv2.resize(cam_gray_resnet18, (w, h)),
-                                        cv2.COLORMAP_HSV)
+                                        cv2.COLORMAP_JET)
     cam_color_resnet50 = cv2.applyColorMap(cv2.resize(cam_gray_resnet50, (w, h)),
-                                        cv2.COLORMAP_HSV)
+                                        cv2.COLORMAP_JET)
     cam_color_densenet121 = cv2.applyColorMap(cv2.resize(cam_gray_densenet121, (w, h)),
-                                            cv2.COLORMAP_HSV)
+                                            cv2.COLORMAP_JET)
     # 3)合并cam和原图，并保存
     cam_resnet18 = src_image * 0.5 + cam_color_resnet18 * 0.5
     cam_resnet50 = src_image * 0.5 + cam_color_resnet50 * 0.5
