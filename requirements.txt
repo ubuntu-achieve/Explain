@@ -22,5 +22,6 @@ grad-cam
 lime
 jupyter
 pycocotools
+pandas
 torchray
 saliency

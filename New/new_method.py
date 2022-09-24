@@ -291,18 +291,18 @@ def Integrated_Mask(img, blurred_img, model, model_name, category, max_iteration
         # L1范数和TV范数
         #loss1 = l1_coeff * torch.mean(torch.abs(1 - mask)) + tv_coeff * tv_norm(mask, tv_beta)
         # idea sum(M)
-        loss1 = l1_coeff * torch.mean(torch.abs(1-mask))
+        #l0
+        # loss1 = torch.tensor((1-mask).nonzero().shape[0]).cuda()
+        #l1
+        # loss1 = l1_coeff * torch.mean(torch.abs(1-mask))
+        # l2
+        loss1 = 0.003*torch.sum((1-mask).pow(2)).pow(0.5)/mask.shape[0]
         loss_all = loss1.clone()
         # 计算混合图像，令图像、扰动图像与掩码对应位置相乘得到混合图像
         # I⊙M+I'⊙(1-M)
         perturbated_input_base = img.mul(upsampled_mask) + blurred_img.mul(1 - upsampled_mask)
         # 注册hook，捕获反向转播过程中流经该模块的梯度信息
         hand = model._modules.get('layer4').register_forward_hook(feature_hook)
-        # 获取指定层的权重
-        if use_cuda:
-            fc_weights = model._modules.get('fc').weight.data.cpu().numpy()
-        else:
-            fc_weights = model._modules.get('fc').weight.data.numpy()
         # 多点计算集成梯度
         for inte_i in range(integ_iter):
             # 扰动掩码，整体改变掩码矩阵的值
@@ -371,8 +371,13 @@ def Integrated_Mask(img, blurred_img, model, model_name, category, max_iteration
             cam_sum = torch.tensor(np.sum(cam.get_cam(Img_LS))).cuda()
         else:
             cam_sum = torch.tensor(np.sum(cam.get_cam(Img_LS)))
-            
-        loss_LS = torch.mean(torch.abs(1-MaskClone)) + outputsLS[0, category] + cam_sum
+        # l0
+        #loss_LS = (1-MaskClone).nonzero().shape[0] + outputsLS[0, category] + cam_sum
+        # l1
+        #loss_LS = torch.mean(torch.abs(1-MaskClone)) + outputsLS[0, category] + cam_sum
+        # l2
+        loss_LS = 0.003*torch.sum((1-MaskClone).pow(2)).pow(0.5)/MaskClone.shape[0] + outputsLS[0, category] + cam_sum
+
         if use_cuda:
             loss_LSdata = loss_LS.data.cpu().numpy()
         else:
@@ -400,7 +405,12 @@ def Integrated_Mask(img, blurred_img, model, model_name, category, max_iteration
                 cam_sum = torch.tensor(np.sum(cam.get_cam(Img_LS))).cuda()
             else:
                 cam_sum = torch.tensor(np.sum(cam.get_cam(Img_LS)))
-            loss_LS = torch.mean(torch.abs(1-MaskClone)) + outputsLS[0, category] + cam_sum
+            # l0
+            #loss_LS = (1-MaskClone).nonzero().shape[0] + outputsLS[0, category] + cam_sum
+            # l1
+            #loss_LS = torch.mean(torch.abs(1-MaskClone)) + outputsLS[0, category] + cam_sum
+            # l2
+            loss_LS = 0.003*torch.sum((1-MaskClone).pow(2)).pow(0.5)/MaskClone.shape[0] + outputsLS[0, category] + cam_sum
 
             if use_cuda:
                 loss_LSdata = loss_LS.data.cpu().numpy()
