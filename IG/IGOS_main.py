@@ -622,7 +622,6 @@ def Deletion_Insertion(mask, model, output_path, img_ori, blurred_img_ori, logit
     ins_ratio = np.around(ins_ratio, decimals=3)
     insimg_ratio = np.around(insimg_ratio, decimals=3)
 
-
     return del_mask, ins_mask, delloss_top2, insloss_top2, del_ratio, ins_ratio, outmax, category, xnum
 
 
@@ -659,7 +658,7 @@ if __name__ == '__main__':
 
     files = os.listdir(input_path)
     print(files)
-    model = load_model_new(use_cuda=use_cuda, model_name='resnet50')  # 选择模型
+    model = load_model_new(use_cuda=use_cuda, model_name='vgg19')  # 选择模型
 
     for imgname in files:
         if imgname.endswith('JPEG'):

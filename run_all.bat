@@ -11,3 +11,4 @@ python ./SmoothGraad/SmoothGrad_resnet.py
 python ./SmoothGraad/SmoothGrad_vgg.py
 python ./GNL/main.py -md guided_integrated_gradients -mn resnet50 -si 1 -ie 1 -ei 5 -gn 0 -da ./Images/
 python ./GNL/main.py -md guided_integrated_gradients -mn vgg19 -si 1 -ie 1 -ei 5 -gn 0 -da ./Images/
+python ./Backpropagation/backpropagation.py

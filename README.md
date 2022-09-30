@@ -48,7 +48,7 @@ LRP
 - [ ] Deep Taylor Decomposition
 - [ ] DeepLift（Pytorch/TensorFlow）【False，似乎不支持比较复杂的模型，不能有两个以上的ReLU】
 - [ ] Deconvolution（Pytorch）【False，在调试】
-- [ ] Backpropagation
+- [x] Backpropagation
 - [ ] Guided Backpropagation（Pytorch）
 - [x] SmoothGrad
 - [ ] Explanation Continuity

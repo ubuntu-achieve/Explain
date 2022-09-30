@@ -10,7 +10,7 @@ from keras.applications import ResNet50
 import warnings
 warnings.filterwarnings('ignore')
 # 选择是否展示
-is_show   = False
+is_show   = True
 # 测试图片路径
 root_path = 'Images'
 # 保存图片路径
@@ -47,6 +47,8 @@ if __name__ == "__main__":
                 backprop_modifier=modifier
             )
             grads = Image.fromarray(grads)
+            # if grads.mode == "F":
+            #     grads = grads.convert('RGB')
             if is_show:
                 grads.show()
             grads.save(path_join(output_path, "%s_resnet50_%d.JPEG"%(modifier, i+1)))
