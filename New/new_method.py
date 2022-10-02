@@ -42,14 +42,24 @@ class GradCAM():
         results = self.model(img)
         results = F.softmax(results, dim=1)
         # 注册hook，捕获反向转播过程中流经该模块的梯度信息
-        hand = self.model._modules.get('layer4').register_forward_hook(feature_hook)
-        # 获取指定层的权重
-        if self.use_cuda:
-            fc_weights = self.model._modules.get('fc').weight.data.cpu().numpy()
-            index      = np.argmax(results.data.cpu().numpy())
-        else:
-            fc_weights = self.model._modules.get('fc').weight.data.numpy()
-            index      = np.argmax(results.data.numpy())
+        if model_name == 'resnet50':
+            hand = self.model._modules.get('layer4').register_forward_hook(feature_hook)
+            # 获取指定层的权重
+            if self.use_cuda:
+                fc_weights = self.model._modules.get('fc').weight.data.cpu().numpy()
+                index      = np.argmax(results.data.cpu().numpy())
+            else:
+                fc_weights = self.model._modules.get('fc').weight.data.numpy()
+                index      = np.argmax(results.data.numpy())
+        elif model_name == 'vgg19':
+            hand = self.model._modules.get('35').register_forward_hook(feature_hook)
+            # 获取指定层的权重
+            if self.use_cuda:
+                fc_weights = self.model.classifier._modules['6'].weight.data.cpu().numpy()
+                index      = np.argmax(results.data.cpu().numpy())
+            else:
+                fc_weights = self.model.classifier._modules['6'].weight.data.numpy()
+                index      = np.argmax(results.data.numpy())
         # 计算CAM
         results[0][index].backward()
         feature = feature_data[-1]
@@ -302,7 +312,10 @@ def Integrated_Mask(img, blurred_img, model, model_name, category, max_iteration
         # I⊙M+I'⊙(1-M)
         perturbated_input_base = img.mul(upsampled_mask) + blurred_img.mul(1 - upsampled_mask)
         # 注册hook，捕获反向转播过程中流经该模块的梯度信息
-        hand = model._modules.get('layer4').register_forward_hook(feature_hook)
+        if model_name == 'resnet50':
+            hand = model._modules.get('layer4').register_forward_hook(feature_hook)
+        elif model_name == 'vgg19':
+            hand = model._modules.get('features').register_forward_hook(feature_hook)
         # 多点计算集成梯度
         for inte_i in range(integ_iter):
             # 扰动掩码，整体改变掩码矩阵的值
@@ -459,11 +472,12 @@ use_cuda     = True
 img_label    = -1
 input_path   = './Images'
 output_path  = './Results/New'
+model_name   = 'resnet50'
 feature_data = []  # 存储梯度信息
 if __name__ == "__main__":
     if not os.path.isdir(output_path):
         os.makedirs(output_path)
-    model = load_model('resnet50', use_cuda=use_cuda)
+    model = load_model(model_name, use_cuda=use_cuda)
     for img_path in os.listdir(input_path)[3:4]:
         img, blurred_img, logitori = Get_blurred_img(
             os.path.join(input_path, img_path),
@@ -478,7 +492,7 @@ if __name__ == "__main__":
             img,
             blurred_img,
             model,
-            'resnet50',
+            model_name,
             img_label,
             max_iterations=30,
             integ_iter=20,

@@ -33,7 +33,8 @@ Integrated Gradients
 
 LIME
 
-- [x] lime
+- [x] Lime
+- [x] BayLime
 
 LRP
 
@@ -42,14 +43,13 @@ LRP
 新方法
 
 - [x] Activation Maximization
-- [ ] Performing AM in Code Space
 - [x] Sensitivity Analysis（Pytorch）
 - [ ] Simple Taylor Decomposition
 - [ ] Deep Taylor Decomposition
 - [ ] DeepLift（Pytorch/TensorFlow）【False，似乎不支持比较复杂的模型，不能有两个以上的ReLU】
-- [ ] Deconvolution（Pytorch）【False，在调试】
+- [ ] Deconvolution（Pytorch）
 - [x] Backpropagation
-- [ ] Guided Backpropagation（Pytorch）
+- [x] Guided Backpropagation
 - [x] SmoothGrad
 - [ ] Explanation Continuity
 - [ ] Explanation Selectivity

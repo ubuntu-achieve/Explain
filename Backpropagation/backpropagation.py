@@ -70,6 +70,7 @@ def enhance(s_mask, s_img, leve=0.025):
 use_cuda    = False and torch.cuda.is_available()
 input_path  = './Images'
 output_path = 'Results/Backpropagation'
+model_name  = 'vgg19'
 
 if __name__ == "__main__":
     if not os.path.exists(output_path):
@@ -79,8 +80,8 @@ if __name__ == "__main__":
         # 读取图片
         image    = cv2.imread(os.path.join(input_path, img))
         # 开始计算
-        mask     = main(image.copy(), use_cuda, 'vgg19')
+        mask     = main(image.copy(), use_cuda, model_name)
         # 增强显示
         mask_pro = enhance(mask, image, leve=0.05)
-        cv2.imwrite(os.path.join(output_path, 'Backpropagation_'+img), np.transpose(mask, (1,2,0))*255)
-        cv2.imwrite(os.path.join(output_path, 'Backpropagation_enhance'+img), mask_pro)
+        cv2.imwrite(os.path.join(output_path, 'Backpropagation_'+model_name+'_'+img), np.transpose(mask, (1,2,0))*255)
+        cv2.imwrite(os.path.join(output_path, 'Backpropagation_enhance_'+model_name+'_'+img), mask_pro)
